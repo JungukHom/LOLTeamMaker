@@ -5,6 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LOLTeamMaker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="500" Width="900">
+    <Grid>
+        <ListView Name="MainList" HorizontalAlignment="Center" Width="360" Height="300" Margin="522,115,10,0" VerticalAlignment="Top" SelectionChanged="MainList_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="닉네임" Width="150" DisplayMemberBinding="{Binding NickName}"/>
+                    <GridViewColumn Header="티어" Width="100" DisplayMemberBinding="{Binding Tier}"/>
+                    <GridViewColumn Header="희망 포지션" Width="100" DisplayMemberBinding="{Binding DesiredPosition}"/>
+                    <!--<GridViewColumn Header="배정 포지션" Width="125" DisplayMemberBinding="{Binding AssignedPosition}"/>-->
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="다음" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="OnNextButtonClick"/>
+    </Grid>
 </Window>
